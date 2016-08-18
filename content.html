@@ -1,0 +1,248 @@
+<section>
+<h2>Topography as a driving force</h2>
+Topography controls water flow, sediment transport, inundation,
+landslides, and determines solar irradiation
+<img src="img/processes.png">
+<aside class="notes">
+As Doreen last time was talking about using computational models for simulating larval dispersal,
+in our group  we work a lot with models simulating hydrological models, soil erosion, but also solar radiation.
+What these models have in common is that topography is the driving input to all these processes.
+</aside>
+</section>
+
+<section>
+<h2>Terrain modification</h2>
+<img src="img/tui.png">
+<p>
+GUI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vs.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TUI
+<aside class="notes">
+To explore different scenarios with these models, it is quite difficult to modify
+topography in the form of digital elevation models on the computer, even using specialized
+software with nice graphical user interface. It is unintuitive and requires certain level of expertise.
+
+On the other hand, shaping things by hand is very natural and since it is effortless, it allows people to be 
+more creative. We took advantage of this and developed a tangible user interface for
+the computational models, we call Tangible Landscape.
+</aside>
+</section>
+
+<section class="imgtext">
+<h2>Tangible Landscape</h2>
+<img width="400px", src="img/setup_decor.png">
+=<br>
+physical terrain model<br>
++<br>
+scanner (Kinect)<br>
++<br>
+projector<br>
++<br>
+computer<br>
++<br>
+GRASS GIS
+<aside class="notes">
+I will first explain the setup of the system.
+ On the table we have a physical terrain model which is scanned by the 
+scanner, in this case we use Microst Kinect for Windows, the gaming device.
+Above, there is projector, and then we computer where we run the geospatial analyses.
+We use GRASS GIS, an open source Geographic information system,
+where a wide range of analyses are implemented,
+from basic terrain analyses tools to more complicated hydrological models,
+erosion/deposition models. 
+
+So how does this work?
+</section>
+
+<section>
+<img src="img/circle.png">
+<aside class="notes">
+We can change the surface of the physical model and our changes
+are then scanned and processed in the GIS and the results are
+projected back on the physical model so you can quickly see what are the impacts 
+of your changes. The scan of the physical model is
+georeferenced and scaled to the real-world dimensions which ensures the
+results from the simulations are realistic.
+</aside>
+</section>
+
+<!-- <section>
+<img src="img/seq1.png">
+</section>
+<section>
+<img src="img/seq2.png">
+</section>
+
+<section>
+<img src="img/seq3.png">
+</section> -->
+
+
+<section data-background-video="video/tangeoms_secref_road_shorter.mp4" >
+<aside class="notes">
+We can change the surface of the physical model and our changes
+are then scanned and processed in the GIS and the results are
+projected back on the physical model so you can quickly see what are the impacts 
+of your changes. The scan of the physical model is
+georeferenced and scaled to the real-world dimensions which ensures the
+results from the simulations are realistic.
+
+In this case, we are running overland water flow model durign a storm event on a physical model
+of a real place in Raleigh, you can see the ortho photo projected. You can see the road
+which is being flooded.
+</aside>
+</section>
+
+
+<!-- <section>
+<img width="600px", src="img/circle.png">
+</section> -->
+
+<section>
+<h2>Lake Raleigh dam break</h2>
+<img width="100%" src="img/Centennial1.png">
+<aside class="notes">
+I will demonstrate what we can do with Tangible Landscape on two 
+different applications.
+The first case study is the simulation of Lake Raleigh dam break.
+You can see part of Centennial Campus on the picture
+</aside>
+</section>
+
+<section>
+<h2>Lake Raleigh dam break</h2>
+<img width="100%" src="img/Centennial2.png">
+<aside class="notes"> And here is the dam and as some of you might now,
+it actually broke in 1996.
+</aside>
+</section>
+
+<section data-background="img/dam_photo_1997.jpg">
+<div style="margin-top:17em; background-color:lightgray">Source: NCSU Libraries</div>
+<aside class="notes">
+Here they were repairing the dam afterwards.
+</aside>
+</section>
+
+<section>
+Simulation using module <em>r.damflood</em> implemented in GRASS GIS
+solving shallow water equations.
+
+<blockquote style="margin-top:3em;">
+Cannata, M., &amp; Marzocchi, R. (2012).
+Two-dimensional dam break flooding simulation:
+A GIS-embedded approach. Natural Hazards, 61(3),
+ 1143–1159.
+</blockquote>
+
+<aside class="notes">
+The simulation was done in GRASS GIS environment using r.damflood,
+ a model designed for this purpose.
+</aside>
+</section>
+
+
+<section>
+<img width="100%" src="img/damflood1.png">
+<aside class="notes">
+We created the surface from sand so that we can modify it. Notice the road
+across the stream. So I scanned the model and ran the model on the scanned surface.
+</aside>
+</section>
+<section>
+<img width="100%" src="img/damflood2.png">
+<aside class="notes">
+
+</aside>
+</section>
+
+<section data-background-video="video/scenario1_crop2.mp4">
+<img style="margin-top:16.5em" width="50%" src="img/sim1.png">
+<aside class="notes">
+We can see it pretty quickly creates a pool just below the dam
+and it is slowed down by the elevated road.
+</aside>
+</section>
+
+<section data-background="img/remove_road.jpg">
+<aside class="notes">
+Since the road is relatively new, built in 2003, we might ask, how is the waterflow
+affected by this road, what happens if it isn't there?
+So I just removed the road from the model.
+</aside>
+</section>
+
+<section data-background-video="video/scenario3_crop2.mp4">
+<img style="margin-top:16.5em" width="50%" src="img/sim1.png">
+<aside class="notes">
+Even though we removed the road and the water can spread more,
+it still spreads also uphill where the other stream is.
+</aside>
+</section>
+<section data-background-video="video/scenario4_crop2.mp4">
+<img style="margin-top:16.5em" width="50%" src="img/sim1.png">
+<aside class="notes">
+In the last scenario, I made the culvert very narrow to explore
+what happens if the culvert gets clogged.
+Since the water can't flow out, we get a large pool, eventually 
+overflowing the road.
+</aside>
+</section>
+
+<section>
+<h2>Tangible exploration of subsurface data</h2>
+<img width="400px" src="img/2014_12_03_0064.JPG">
+<img width="400px" src="img/2014_12_03_0065.JPG">
+<aside class="notes">
+In the second case study, we will explote subsurface, specifically
+soil moisture data in the form of 3D raster or voxel model if you like.
+
+We can look under the ground and explore the place 
+as if we were at an excavation site by digging into the sand
+with our hands.
+</aside>
+</section>
+
+<section>
+<!-- <h2>Tangible exploration of subsurface data</h2> -->
+<img src="img/cross_section.png"></p>
+<aside class="notes">
+Then we compute the cross-section
+of the scanned surface with the 3D
+raster representing soil properties and project it back on the surface.
+</aside>
+</section>
+
+<section data-background-video="video/subsurface.mp4">
+<p style="margin-top:30em;font-size: 50%;">Soil moisture data provided by Dr. Jeffrey White
+<aside class="notes">
+In this example, we explore
+the 3D distribution of measured soil moisture percentage.
+</aside>
+</section>
+
+<section>
+<h2>Applications</h2>
+<ul>
+<li>intuitive 3D sketching for design and planning</li>
+<li>collaborative, interdisciplinary and creative environment for decision making</li>
+<li>GIS education, explaining spatial concepts</li>
+<li>testing of algorithms for modeling land surface processes</li>
+</ul>
+<p>
+<img style="margin-right:0.5em" width="45%" src="img/people1.jpg">
+<img width="45%" src="img/deti.jpg">
+</section>
+
+<section data-background="img/thank_you.jpg">
+
+
+<!-- <p style="margin-top:20em;font-size: 50%;">https://github.com/ncsu-osgeorel/grass-tangible-landscape</p> -->
+</section>
+
+<!-- <section data-background="img/scenario1.gif">
+</section>
+
+<section data-background="img/scenario3.gif">
+</section>
+
+<section data-background="img/scenario4.gif">
+</section> -->

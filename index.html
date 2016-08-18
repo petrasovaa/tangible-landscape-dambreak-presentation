@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="en">
+<!-- This is a generated file. Do not edit. -->
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Template for lecture slides</title>
+
+        <meta name="description" content="Template for lecture slides of NCSU OSGeoREL courses">
+        <meta name="author" content="Vaclav Petras">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/white.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+
+        <style>
+        * {
+            /*font-family: Verdana, Geneva, sans-serif !important;*/
+        }
+        body {
+        /*background-color: #FFF !important;*/
+        /*
+          background-image: url("pictures/elevation-nagshead.gif");
+          background-repeat: no-repeat;
+          background-position: left bottom;*/
+        }
+        .reveal section img {
+            background: transparent;
+            border: 0;
+            box-shadow: 0 0 0 rgba(0, 0, 0, 0.15);
+        }
+        /* for standalone frame */
+        /*
+        iframe {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        */
+        /* display: inline; background-color: #002B36; padding: 0px; margin: 0px */
+        .rounded-corners {
+            border: 0px solid black;
+            border-radius: 5px;
+            -moz-border-radius: 5px;
+            -khtml-border-radius: 5px;
+            -webkit-border-radius: 5px;
+        }
+        /*a {
+            color: #060 !important;
+        }
+        a:hover {
+            color: #060 !important;
+            text-decoration: underline !important;
+        }*/
+        /*h1, h2, h3, h4, h5 {
+            text-transform: none !important;
+            /* word-break: keep-all; text-transform: none; font-size: 200%; line-height: 110%; */
+            color: #040 !important;
+            /* color: #444 !important; */ /* grey from the wab page */
+            font-weight: bold !important;
+            -webkit-hyphens: none !important;
+            -moz-hyphens: none !important;
+            -ms-hyphens: none !important;
+            hyphens: none !important;
+            line-height: 110% !important;
+        }*/
+        .reveal .progress span {
+            background-color: #060 !important;
+        }
+        /* predefined element positioning */
+        .top {
+            /*position: relative;*/
+            top: 5%;
+            height: 45%; /* is the height even needed? */
+        }
+        .bottom {
+            height: 45%;
+        }
+        .ne {
+            position: absolute;
+            top: 5%;
+            right: 5%;
+            height: 45%;
+            width: 45%;
+        }
+        .nw {
+            position: absolute;
+            top: 5%;
+            left: 5%;
+            height: 45%;
+            width: 45%;
+        }
+        .se {
+            position: absolute;
+            bottom: 5%;
+            right: 5%;
+            height: 45%;
+            width: 45%;
+        }
+        .sw {
+            position: absolute;
+            bottom: 5%;
+            left: 5%;
+            height: 45%;
+            width: 45%;
+        }
+
+        /* classes for sections with predefined elements */
+        /* classes for sections with predefined elements */
+        .right, .textimg > img, .textimg > video, .textimg > iframe, .imgtext > p, .imgtext > ul, .imgtext > ol, .imgtext > div {
+            float: right;
+            text-align: left;
+            max-width: 47%;
+        }
+        .left, .imgtext > img, .imgtext > video, imgtext > iframe, .textimg > p, .textimg > ul, .textimg > ol, .textimg > div {
+            float: left;
+            text-align: left;
+            max-width: 47%;
+        }
+        li > ul, li > ol {
+            font-size: 85% !important;
+            line-height: 110% !important;
+        }
+        </style>
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+<section data-background="img/background_slide.png">
+<h4 style="text-align:right; margin-top: 10em">April 2015</h4>
+<h4 style="text-align:right">Anna Petrasova</h4>    
+<h2 style="text-align:right">Geospatial modeling with<br> tangible interaction</h2>
+    <h3></h3>
+    
+    <!-- <p class="title-foot">
+        <a href="http://www.ncsu.edu/" title="North Carolina State University">NCSU</a>
+        <a href="http://geospatial.ncsu.edu/osgeorel/" title="NCSU OSGeo Research and Education Laboratory">OSGeoREL</a>
+        at
+        <a href="http://geospatial.ncsu.edu/" title="Center for Geospatial Analytics">Center for Geospatial Analytics</a> -->
+        <!-- <br> -->
+
+
+</section>
+<!-- This is a generated file. Do not edit. -->
+<section>
+<h2>Topography as a driving force</h2>
+Topography controls water flow, sediment transport, inundation,
+landslides, and determines solar irradiation
+<img src="img/processes.png">
+<aside class="notes">
+As Doreen last time was talking about using computational models for simulating larval dispersal,
+in our group  we work a lot with models simulating hydrological models, soil erosion, but also solar radiation.
+What these models have in common is that topography is the driving input to all these processes.
+</aside>
+</section>
+
+<section>
+<h2>Terrain modification</h2>
+<img src="img/tui.png">
+<p>
+GUI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vs.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TUI
+<aside class="notes">
+To explore different scenarios with these models, it is quite difficult to modify
+topography in the form of digital elevation models on the computer, even using specialized
+software with nice graphical user interface. It is unintuitive and requires certain level of expertise.
+
+On the other hand, shaping things by hand is very natural and since it is effortless, it allows people to be 
+more creative. We took advantage of this and developed a tangible user interface for
+the computational models, we call Tangible Landscape.
+</aside>
+</section>
+
+<section class="imgtext">
+<h2>Tangible Landscape</h2>
+<img width="400px", src="img/setup_decor.png">
+=<br>
+physical terrain model<br>
++<br>
+scanner (Kinect)<br>
++<br>
+projector<br>
++<br>
+computer<br>
++<br>
+GRASS GIS
+<aside class="notes">
+I will first explain the setup of the system.
+ On the table we have a physical terrain model which is scanned by the 
+scanner, in this case we use Microst Kinect for Windows, the gaming device.
+Above, there is projector, and then we computer where we run the geospatial analyses.
+We use GRASS GIS, an open source Geographic information system,
+where a wide range of analyses are implemented,
+from basic terrain analyses tools to more complicated hydrological models,
+erosion/deposition models. 
+
+So how does this work?
+</section>
+
+<section>
+<img src="img/circle.png">
+<aside class="notes">
+We can change the surface of the physical model and our changes
+are then scanned and processed in the GIS and the results are
+projected back on the physical model so you can quickly see what are the impacts 
+of your changes. The scan of the physical model is
+georeferenced and scaled to the real-world dimensions which ensures the
+results from the simulations are realistic.
+</aside>
+</section>
+
+<!-- <section>
+<img src="img/seq1.png">
+</section>
+<section>
+<img src="img/seq2.png">
+</section>
+
+<section>
+<img src="img/seq3.png">
+</section> -->
+
+
+<section data-background-video="video/tangeoms_secref_road_shorter.mp4" >
+<aside class="notes">
+We can change the surface of the physical model and our changes
+are then scanned and processed in the GIS and the results are
+projected back on the physical model so you can quickly see what are the impacts 
+of your changes. The scan of the physical model is
+georeferenced and scaled to the real-world dimensions which ensures the
+results from the simulations are realistic.
+
+In this case, we are running overland water flow model durign a storm event on a physical model
+of a real place in Raleigh, you can see the ortho photo projected. You can see the road
+which is being flooded.
+</aside>
+</section>
+
+
+<!-- <section>
+<img width="600px", src="img/circle.png">
+</section> -->
+
+<section>
+<h2>Lake Raleigh dam break</h2>
+<img width="100%" src="img/Centennial1.png">
+<aside class="notes">
+I will demonstrate what we can do with Tangible Landscape on two 
+different applications.
+The first case study is the simulation of Lake Raleigh dam break.
+You can see part of Centennial Campus on the picture
+</aside>
+</section>
+
+<section>
+<h2>Lake Raleigh dam break</h2>
+<img width="100%" src="img/Centennial2.png">
+<aside class="notes"> And here is the dam and as some of you might now,
+it actually broke in 1996.
+</aside>
+</section>
+
+<section data-background="img/dam_photo_1997.jpg">
+<div style="margin-top:17em; background-color:lightgray">Source: NCSU Libraries</div>
+<aside class="notes">
+Here they were repairing the dam afterwards.
+</aside>
+</section>
+
+<section>
+Simulation using module <em>r.damflood</em> implemented in GRASS GIS
+solving shallow water equations.
+
+<blockquote style="margin-top:3em;">
+Cannata, M., &amp; Marzocchi, R. (2012).
+Two-dimensional dam break flooding simulation:
+A GIS-embedded approach. Natural Hazards, 61(3),
+ 1143–1159.
+</blockquote>
+
+<aside class="notes">
+The simulation was done in GRASS GIS environment using r.damflood,
+ a model designed for this purpose.
+</aside>
+</section>
+
+
+<section>
+<img width="100%" src="img/damflood1.png">
+<aside class="notes">
+We created the surface from sand so that we can modify it. Notice the road
+across the stream. So I scanned the model and ran the model on the scanned surface.
+</aside>
+</section>
+<section>
+<img width="100%" src="img/damflood2.png">
+<aside class="notes">
+
+</aside>
+</section>
+
+<section data-background-video="video/scenario1_crop2.mp4">
+<img style="margin-top:16.5em" width="50%" src="img/sim1.png">
+<aside class="notes">
+We can see it pretty quickly creates a pool just below the dam
+and it is slowed down by the elevated road.
+</aside>
+</section>
+
+<section data-background="img/remove_road.jpg">
+<aside class="notes">
+Since the road is relatively new, built in 2003, we might ask, how is the waterflow
+affected by this road, what happens if it isn't there?
+So I just removed the road from the model.
+</aside>
+</section>
+
+<section data-background-video="video/scenario3_crop2.mp4">
+<img style="margin-top:16.5em" width="50%" src="img/sim1.png">
+<aside class="notes">
+Even though we removed the road and the water can spread more,
+it still spreads also uphill where the other stream is.
+</aside>
+</section>
+<section data-background-video="video/scenario4_crop2.mp4">
+<img style="margin-top:16.5em" width="50%" src="img/sim1.png">
+<aside class="notes">
+In the last scenario, I made the culvert very narrow to explore
+what happens if the culvert gets clogged.
+Since the water can't flow out, we get a large pool, eventually 
+overflowing the road.
+</aside>
+</section>
+
+<section>
+<h2>Tangible exploration of subsurface data</h2>
+<img width="400px" src="img/2014_12_03_0064.JPG">
+<img width="400px" src="img/2014_12_03_0065.JPG">
+<aside class="notes">
+In the second case study, we will explote subsurface, specifically
+soil moisture data in the form of 3D raster or voxel model if you like.
+
+We can look under the ground and explore the place 
+as if we were at an excavation site by digging into the sand
+with our hands.
+</aside>
+</section>
+
+<section>
+<!-- <h2>Tangible exploration of subsurface data</h2> -->
+<img src="img/cross_section.png"></p>
+<aside class="notes">
+Then we compute the cross-section
+of the scanned surface with the 3D
+raster representing soil properties and project it back on the surface.
+</aside>
+</section>
+
+<section data-background-video="video/subsurface.mp4">
+<p style="margin-top:30em;font-size: 50%;">Soil moisture data provided by Dr. Jeffrey White
+<aside class="notes">
+In this example, we explore
+the 3D distribution of measured soil moisture percentage.
+</aside>
+</section>
+
+<section>
+<h2>Applications</h2>
+<ul>
+<li>intuitive 3D sketching for design and planning</li>
+<li>collaborative, interdisciplinary and creative environment for decision making</li>
+<li>GIS education, explaining spatial concepts</li>
+<li>testing of algorithms for modeling land surface processes</li>
+</ul>
+<p>
+<img style="margin-right:0.5em" width="45%" src="img/people1.jpg">
+<img width="45%" src="img/deti.jpg">
+</section>
+
+<section data-background="img/thank_you.jpg">
+
+
+<!-- <p style="margin-top:20em;font-size: 50%;">https://github.com/ncsu-osgeorel/grass-tangible-landscape</p> -->
+</section>
+
+<!-- <section data-background="img/scenario1.gif">
+</section>
+
+<section data-background="img/scenario3.gif">
+</section>
+
+<section data-background="img/scenario4.gif">
+</section> --><!-- This is a generated file. Do not edit. -->
+        </div>  <!-- slides -->
+
+    </div>  <!-- reveal -->
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                // Display controls in the bottom right corner
+                controls: false,
+
+                // Display a presentation progress bar
+                progress: true,
+                
+                center: true,
+                
+                // Display the page number of the current slide
+                slideNumber: false,
+
+                // Enable the slide overview mode
+                overview: true,
+
+                // Turns fragments on and off globally
+                fragments: true,
+
+                // The "normal" size of the presentation, aspect ratio will be preserved
+                // when the presentation is scaled to fit different resolutions. Can be
+                // specified using percentage units.
+                // width: 960,
+                // height: 700,
+                
+                // Factor of the display size that should remain empty around the content
+                //margin: 0.05,  // increase?
+
+                // Bounds for smallest/largest possible scale to apply to content
+                //minScale: 0.5,
+                //maxScale: 5.0,
+
+                theme: Reveal.getQueryHash().theme,  // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Push each slide change to the browser history
+                history: true,
+                // Enable keyboard shortcuts for navigation
+                keyboard: true,
+
+                // Vertical centering of slides
+                center: true,
+
+                // Enables touch navigation on devices with touch input
+                touch: true,
+
+                // Loop the presentation
+                loop: false,
+                // Flags if the presentation is running in an embedded mode,
+                // i.e. contained within a limited portion of the screen
+                embedded: false,
+
+                // Number of milliseconds between automatically proceeding to the
+                // next slide, disabled when set to 0, this value can be overwritten
+                // by using a data-autoslide attribute on your slides
+                autoSlide: 0,
+
+                // Stop auto-sliding after user input
+                autoSlideStoppable: true,
+
+                // Enable slide navigation via mouse wheel
+                mouseWheel: false,
+
+                // Hides the address bar on mobile devices
+                hideAddressBar: true,
+
+                // Opens links in an iframe preview overlay
+                previewLinks: false,
+
+                // Transition speed
+                transitionSpeed: 'default', // default/fast/slow
+
+                // Transition style for full page slide backgrounds
+                backgroundTransition: 'none', // default/none/slide/concave/convex/zoom
+
+                // Number of slides away from the current that are visible
+                viewDistance: 3,
+
+                // Parallax background image
+                //parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+                // Parallax background size
+                //parallaxBackgroundSize: '' // CSS syntax, e.g. "2100px 900px"
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/math/math.js', async: true }
+                ],
+
+                math: {
+                    mathjax: 'http://cdn.mathjax.org/mathjax/latest/MathJax.js',
+                    config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+                }
+            });
+
+        </script>
+        <script type="text/javascript"
+    src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+    </body>
+</html>
